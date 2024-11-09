@@ -11,6 +11,12 @@ const itemIds = [1, 2, 3, 4, 16, 18, 19, 20];
 function App() {
 
   const [items, setItems] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (item, quantity) => {
+    item.quantity = quantity;
+    setCart([...cart, item]);
+  }
 
   async function getItems() {
     const itemsList = [];
@@ -30,7 +36,7 @@ function App() {
       <Header></Header>
       <Routes>
           <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/shop" element={<Shop items={items}></Shop>}></Route>
+          <Route path="/shop" element={<Shop items={items} handleClick={addToCart}></Shop>}></Route>
       </Routes>
     </Router>
   );
