@@ -1,0 +1,23 @@
+.item img {
+    width: 200px;
+    height: 200px;
+}
+
+.item {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 8px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-quantity {
+    display: flex;
+    gap: 10px;
+}
+
+.item-quantity input {
+    width: 50px;
+}
