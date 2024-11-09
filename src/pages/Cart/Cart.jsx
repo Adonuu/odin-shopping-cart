@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
-import { CartItem } from "./CartItem";
+import { CartItem } from "../../components/CartItem/CartItem";
 import styles from "./Cart.module.css"
 
 export function Cart ({ cart, handleClick }) {
 
     let total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    total = parseFloat(total.toFixed(2));
     return (
         <div className={styles.cart}>
             <h2>Cart</h2>

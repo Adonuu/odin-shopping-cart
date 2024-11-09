@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header/Header';
 import { Home } from './pages/Home/Home';
 import { Shop } from './pages/Shop/Shop';
-import { Cart } from './components/Cart';
+import { Cart } from './pages/Cart/Cart';
 import './App.css';
 import { useEffect, useState } from 'react';
 import { fetchItem } from './api';

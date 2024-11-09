@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-import { Item } from "../../components/Item"
+import { Item } from "../../components/Item/Item"
 import styles from "./Shop.module.css"
 
 export function Shop({ items, handleClick }) {
