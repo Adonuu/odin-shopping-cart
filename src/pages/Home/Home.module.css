@@ -1,0 +1,15 @@
+.main-content {
+    margin-top: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.main-content img {
+    width: 1000px;
+    height: 665px;
+}
+
+.main-content p {
+    width: 60ch;
+}
