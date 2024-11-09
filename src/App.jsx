@@ -1,25 +1,18 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Header } from './components/Header/Header';
+import { Home } from './pages/Home/Home';
+import { Shop } from './pages/Shop/Shop';
 import './App.css';
-import { Item } from './components/Item';
-import { fetchItem } from './api';
-import { useState, useEffect } from 'react';
 
 function App() {
-  const [product, setProduct] = useState(null);
-
-  useEffect(() => {
-    async function loadProduct() {
-      const item = await fetchItem(1);
-      console.log(item);
-      setProduct(item);
-    }
-
-    loadProduct();
-  }, []);
-
   return (
-    <>
-      {product ? <Item product={product} /> : <p>Loading...</p>}
-    </>
+    <Router>
+      <Header></Header>
+      <Routes>
+          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/shop" element={<Shop></Shop>}></Route>
+      </Routes>
+    </Router>
   );
 }
 
