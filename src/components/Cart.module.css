@@ -1,0 +1,11 @@
+.total {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.cart {
+    padding: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}

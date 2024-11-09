@@ -7,6 +7,7 @@ export function Header() {
             <nav>
                 <NavLink to="/" activeClassName="active">Home</NavLink>
                 <NavLink to="/shop" activeClassName="active">Shop</NavLink>
+                <NavLink to="/cart" activeClassName="active">Cart</NavLink>
             </nav>
         </header>
     )

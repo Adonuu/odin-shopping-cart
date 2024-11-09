@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header/Header';
 import { Home } from './pages/Home/Home';
 import { Shop } from './pages/Shop/Shop';
+import { Cart } from './components/Cart';
 import './App.css';
 import { useEffect, useState } from 'react';
 import { fetchItem } from './api';
@@ -16,6 +17,10 @@ function App() {
   const addToCart = (item, quantity) => {
     item.quantity = quantity;
     setCart([...cart, item]);
+  }
+
+  const removeFromCart = (itemToRemove) => {
+    setCart(cart.filter(item => item.id !== itemToRemove.id));
   }
 
   async function getItems() {
@@ -37,6 +42,7 @@ function App() {
       <Routes>
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/shop" element={<Shop items={items} handleClick={addToCart}></Shop>}></Route>
+          <Route path="/cart" element={<Cart cart={cart} handleClick={removeFromCart}></Cart>}></Route>
       </Routes>
     </Router>
   );
