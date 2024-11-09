@@ -15,9 +15,20 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const addToCart = (item, quantity) => {
-    item.quantity = quantity;
-    setCart([...cart, item]);
-  }
+    // Check if the item already exists in the cart
+    const existingItemIndex = cart.findIndex(cartItem => cartItem.id === item.id);
+  
+    if (existingItemIndex !== -1) {
+      // Item exists, so update its quantity
+      const updatedCart = [...cart];
+      updatedCart[existingItemIndex].quantity += quantity; // Update quantity
+      setCart(updatedCart); // Update the cart state
+    } else {
+      // Item doesn't exist, so add it to the cart with the specified quantity
+      item.quantity = quantity;
+      setCart([...cart, item]);
+    }
+  };
 
   const removeFromCart = (itemToRemove) => {
     setCart(cart.filter(item => item.id !== itemToRemove.id));

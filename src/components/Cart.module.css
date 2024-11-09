@@ -9,3 +9,7 @@
     flex-flow: column nowrap;
     gap: 10px;
 }
+
+button {
+    width: 110px;
+}

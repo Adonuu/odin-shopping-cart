@@ -16,6 +16,7 @@ export function Cart ({ cart, handleClick }) {
                 </CartItem>
             ))}
             <div className={styles.total}>Total: ${total}</div>
+            <button>Checkout</button>
         </div>
     )
 }
