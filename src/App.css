@@ -25,6 +25,6 @@ header nav a {
   margin-right: 50px;
 }
 
-div {
+.main-content {
   grid-area: main-content;
 }
